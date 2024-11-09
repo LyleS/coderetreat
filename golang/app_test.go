@@ -27,7 +27,7 @@ func Test_Tick_FalseGrid_NoChange(t *testing.T) {
 	actual := tick(in)
 
 	// Assert
-	assert.NotEqual(t, expected, actual)
+	assert.Equal(t, expected, actual)
 }
 
 func Test_Tick_NoNeighbors_Dies(t *testing.T) {
