@@ -29,3 +29,15 @@ func Tick_FalseGrid_NoChange(t *testing.T) {
 	// Assert
 	assert.Equal(t, expected, actual)
 }
+
+func Tick_NoNeighbors_Dies(t *testing.T) {
+	// Assemble
+	in := Grid{{true}}
+	expected := Grid{{false}}
+
+	// Act
+	actual := tick(in)
+
+	// Assert
+	assert.Equal(t, expected, actual)
+}
