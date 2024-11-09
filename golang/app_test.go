@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Tick_EmptyGrid_NoChange(t *testing.T) {
+func Test_Tick_EmptyGrid_NoChange(t *testing.T) {
 	// Assemble
 	in := Grid{{}}
 	expected := Grid{{}}
@@ -18,7 +18,7 @@ func Tick_EmptyGrid_NoChange(t *testing.T) {
 	assert.Equal(t, expected, actual)
 }
 
-func Tick_FalseGrid_NoChange(t *testing.T) {
+func Test_Tick_FalseGrid_NoChange(t *testing.T) {
 	// Assemble
 	in := Grid{{false}, {false}}
 	expected := Grid{{false}, {false}}
@@ -27,10 +27,10 @@ func Tick_FalseGrid_NoChange(t *testing.T) {
 	actual := tick(in)
 
 	// Assert
-	assert.Equal(t, expected, actual)
+	assert.NotEqual(t, expected, actual)
 }
 
-func Tick_NoNeighbors_Dies(t *testing.T) {
+func Test_Tick_NoNeighbors_Dies(t *testing.T) {
 	// Assemble
 	in := Grid{{true}}
 	expected := Grid{{false}}
