@@ -6,6 +6,14 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestFails(t *testing.T) {
-	assert.False(t, BoolFunc(), "Test should fail")
+func TestTickEmptyGridIsEmpty(t *testing.T) {
+	// Assemble
+	in := Grid{{}}
+	expected := Grid{{}}
+	
+	// Act
+	actual := tick(in)
+
+	// Assert 
+	assert.Equal(t, expected, actual)
 }
